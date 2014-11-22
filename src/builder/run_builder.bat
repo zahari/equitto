@@ -8,7 +8,7 @@ builder.exe
 PAUSE
 
 del *.exe *.obj *.map *.prj *.tds
-..\tcc\tcc builder.c
+..\..\tcc\tcc.exe builder.c
 builder.exe
 PAUSE
 
