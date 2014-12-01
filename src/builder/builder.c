@@ -10,7 +10,7 @@
 #define MAX_DIFFICULTY_LEVEL 10
 /* Change the level of difficulty here */
 #define DIFFICULTY_LEVEL 10 /* FROM 1 UP TO 10 */
-#define MIN_EQ_LEN DIFFICULTY_LEVEL * 2 + 10 - DIFFICULTY_LEVEL
+#define MIN_EQ_LEN DIFFICULTY_LEVEL * 2 + 13 - DIFFICULTY_LEVEL
 /* Simple fraction
 #define MIN_EQ_LEN DIFFICULTY_LEVEL * 2 + 10 - DIFFICULTY_LEVEL
 */
