@@ -1,0 +1,8 @@
+---
+script:
+  - gcc  -Wall -Werror src/builder/builder.c
+  - gcc  -Wall -Werror src/solver/solver.c
+  - gcc  -Wall -Werror src/solver/solver_gen.c
+  
+compiler:
+  - gcc
