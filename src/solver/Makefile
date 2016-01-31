@@ -1,13 +1,19 @@
-CC=gcc
-CFLAGS=-c -Wall -Werror -pedantic
-LIB=-lm
+CC = gcc
+CFLAGS = -Wall -Werror -pedantic
+LDFLAGS = -lm
+EXECUTABLES = solver.out solver_gen.out
 
-all: clean solver.o solver_gen.o 
-	$(CC) $(LIB) -o solver.out solver.o
-	$(CC) $(LIB) -o solver_gen.out solver_gen.o
-solver.o: solver.c
-	$(CC) $(CFLAGS) solver.c
-solver_gen.o: solver_gen.c
-	$(CC) $(CFLAGS) solver_gen.c
+all: clean $(EXECUTABLES)
+	mkdir bin/
+	mv *.out bin/ 
+
+%.out: %.o
+	@echo "   $@"
+	@$(CC) -o $@ $< $(LDFLAGS)
+
+%.o: %.c
+	@echo "   $@"
+	@$(CC) -o $@ -c $< $(CFLAGS)
+
 clean:
-	rm -f *.o *~ *.out solver solver_gen
+	rm -rf *.o *~ *.out bin/

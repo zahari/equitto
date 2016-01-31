@@ -1,10 +1,19 @@
-CC=gcc
-CFLAGS=-c -Wall -Werror -pedantic
-LIB=-lm
+CC = gcc
+CFLAGS = -Wall -Werror -pedantic
+LDFLAGS = -lm
+EXECUTABLES = builder.out
 
-all: clean builder.o
-	$(CC) $(LIB) -o builder.out builder.o
-builder.o: builder.c
-	$(CC) $(CFLAGS) builder.c
+all: clean $(EXECUTABLES) 
+	mkdir bin
+	mv *.out bin/
+
+%.out: %.o
+	@echo "   $@"
+	@$(CC) -o $@ $< $(LDFLAGS)
+
+%.o: %.c
+	@echo "   $@"
+	@$(CC) -o $@ -c $< $(CFLAGS)
+
 clean:
-	rm -f *.o *~ *.out
+	rm -rf *.o *~ *.out bin/
