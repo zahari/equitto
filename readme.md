@@ -1,10 +1,13 @@
 Equitto
 ========
 
-Project to generate and solve maths equations - linear and square.
+Project to generate and solve mathematics equations - linear and qadratic.
 
 [![Build Status](https://travis-ci.org/zahari/equitto.svg?branch=master)](https://travis-ci.org/zahari/equitto)
 
-**TCC** - Tiny C compiler for Windows
+**tcc/** - Tiny C compiler for Windows
 
-**SRC** - The main ANSI C source of the project 
+**src/** - The main ANSI C source of the project
+
+[Online Quadratic Equation Calculator](https://www.symbolab.com/solver/quadratic-equation-calculator/)
+
