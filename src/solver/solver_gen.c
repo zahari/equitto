@@ -57,16 +57,16 @@ int main(const int argc, const char *argv[]) {
                 fprintf(fp, space[0]);
                 */
                 fprintf(fp, "%c", sign[rand() % 2]); 
-                fprintf(fp, space[1]);
+                fprintf(fp, "%s", space[1]);
                 fprintf(fp, "%d", (rand() % MAX_NUMBER) ); 
-                fprintf(fp, denom);
-                fprintf(fp, space[2]);
+                fprintf(fp, "%s", denom);
+                fprintf(fp, "%s", space[2]);
                 if ( (rand() % MAX_NUMBER) < (rand() % MAX_NUMBER) ) {
                     if ( STAR_MULT_ALLOW ) fprintf(fp, "*");
                     if ( (rand() % MAX_NUMBER) > (rand() % MAX_NUMBER) ) fprintf(fp, "x");
                     else fprintf(fp, "x^%d", rand() % MAX_POW);
                 } 
-                fprintf(fp, space[3]);
+                fprintf(fp, "%s", space[3]);
             }
             if (side_flag) fprintf(fp, "=");
         }
