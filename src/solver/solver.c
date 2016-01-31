@@ -28,9 +28,10 @@ struct expr_unit ExprParser( const char *e ) {
     long num;
     int flag;
     
-    //printf("\n[Processing: '%s']\n", e);
-    //assert( '-' == *pe || '+' == *pe);
-    
+    /*
+    printf("\n[Processing: '%s']\n", e);
+    assert( '-' == *pe || '+' == *pe);
+    */    
     if ( '-' == *pe ) {
         res.sign = -1;
         pe++;
@@ -42,12 +43,14 @@ struct expr_unit ExprParser( const char *e ) {
         res.sign = 1;
     }
     
-    //printf("\n[%c]\n", *pe);
+    /* printf("\n[%c]\n", *pe); */
     num  = 0;
     flag = 1;
     while ( *pe >= '0' && *pe <= '9' ) {
-        //printf("\n>[%d = %d *10 + (%d - %d)]\n", num, num, *pe, '0');
-        //printf("\n>>[%d = %d *10 + (%d)]\n", num, num, *pe - '0');
+        /*
+        printf("\n>[%d = %d *10 + (%d - %d)]\n", num, num, *pe, '0');
+        printf("\n>>[%d = %d *10 + (%d)]\n", num, num, *pe - '0');
+        */
         num = num * 10 + (*pe - '0');
         pe++;
         flag = 0;
@@ -79,14 +82,16 @@ struct expr_unit ExprParser( const char *e ) {
         pe++;
     }
     
-    //printf("\n[%d]\n", *pe);
+    /* printf("\n[%d]\n", *pe); */
     if ( '^' == *pe ) {
         pe++;
         assert( *pe >= '0' && *pe <= '2' );
         res.unknown_pow = (*pe - '0');
     } 
-    //printf("\n[Processed res.sign='%c' res.nom=%d res.denom=%d res.unknown='%c' res.unknown_pow=%d]\n", 
-    //    ((-1 == res.sign)?('-'):('+')), res.nom, res.denom, res.unknown, res.unknown_pow);    
+    /*
+    printf("\n[Processed res.sign='%c' res.nom=%d res.denom=%d res.unknown='%c' res.unknown_pow=%d]\n", 
+        ((-1 == res.sign)?('-'):('+')), res.nom, res.denom, res.unknown, res.unknown_pow);    
+    */
     return res;
 }
 
@@ -194,7 +199,7 @@ int main(const int argc, const char **argv) {
     char fname[20] = INFNAME;
     if (argc == 2 && strlen(argv[1]) > 0) strcpy(fname, argv[1]);
     printf("Reading from: %s\n", fname);
-    //printf("%d\n", (long)strchr(fname, '.') - (long)&fname);
+    /* printf("%d\n", (long)strchr(fname, '.') - (long)&fname); */
     ReadInputFile(fname);
 
     return 0;
