@@ -1,8 +1,6 @@
 ---
 script:
-  - gcc -lm -Wall -Werror src/builder/builder.c
-  - gcc -lm  -Wall -Werror src/solver/solver.c
-  - gcc -lm  -Wall -Werror src/solver/solver_gen.c
+  - make
   
 compiler:
   - gcc
